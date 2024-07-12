@@ -9,8 +9,9 @@
         $work = $_POST['work'];
         $price = $_POST['price'];
         $hour = $_POST['hour'];
+        
 
-        $sql = 'INSERT INTO schedules (name, date, work, price, hour) VALUES (?, ?, ?, ?, ?)';
+        $sql = 'INSERT INTO schedules (name, date, work, price, hour) VALUES (?, ?, ?, ?, ? )';
 
         if ($stmt = $conn->prepare($sql)){
             $stmt->bind_param("sssss", $name, $date, $work, $price, $hour);
